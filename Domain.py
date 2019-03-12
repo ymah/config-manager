@@ -9,7 +9,12 @@ import Partition
 
 class Domain:
 
+    listOfTask = []
+    listOfPartition = []
+    listOfQueues = []
+    listOfHardware = []
 
+    domain = []
 
     def __init__(self,domainJSON):
         self._id = domainJSON['id']
@@ -33,21 +38,24 @@ class Domain:
 
 
     def generate(self):
-        print("/*")
-        print("Creating domain %s"%(self.name))
-        print("*/")
 
-        print("//Creating tasks if any")
         for subTask in self.subTask:
-            subTask.generate()
-        print("//Creating sub-partitions if any")
+            self.listOfTask.append(subTask.generate())
+
+        self.domain.append(self.listOfTask)
         for subPart in self.subPartition:
-            subPart.generate()
-        print("//Creating queues if any")
+            self.listOfPartition.append(subPart.generate())
+        self.domain.append(self.listOfPartition)
         for qu in self.queue:
-            qu.generate()
-        print("//Enabling hardware access if any")
+            self.listOfQueues.append(qu.generate())
+        self.domain.append(self.listOfQueues)
         for hw in self.hardware:
-            hw.generate()
+            self.listOfHardware.append(hw.generate())
+        self.domain.append(self.listOfHardware)
 
 
+    def getDomain(self):
+        return self.domain
+
+    def getName(self):
+        return self.name

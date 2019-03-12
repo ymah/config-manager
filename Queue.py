@@ -17,8 +17,4 @@ class Queue:
         self.queueLength = queueJSON['queue-size']
         self.itemSize = queueJSON['element-size']
     def generate(self):
-        print("xQueueCreate(%d,%d);"%(self.queueLength,self.itemSize))
-
-
-
-
+        return ("xQueueCreate(%d,%d);"%(self.queueLength,self.itemSize))

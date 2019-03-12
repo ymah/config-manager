@@ -5,18 +5,18 @@
     {
       "id":1,
       "name":"tache1",
+      "function": "functionName1",
+      "stackSize": 256,
       "priority":12,
-      "function":"bidule",
-      "stackSize":1000,
-      "parameters":"NULL"
+      "parameters" : "NULL"
     },
     {
       "id":2,
       "name":"tache2",
+      "function": "functionName2",
+      "stackSize": 256,
       "priority":13,
-      "function":"bidule2",
-      "stackSize":2000,
-      "parameters":"NULL"
+      "parameters" : "NULL"
     }
     ],
     "sub-partitions":[
@@ -24,19 +24,13 @@
       "id":1,
       "name":"part1",
       "priority":12,
-      "function":"bidulePart1",
-      "stackSize":1000,
-      "parameters":"NULL",
       "hw-access":["led1"],
-      "queue-access":[1,2] 
+      "queue-access":[1,2]
     },
     {
       "id":2,
       "name":"part2",
       "priority":13,
-      "function":"bidulepart2",
-      "stackSize":2000,
-      "parameters":"NULL",
       "hw-access":["led2"],
       "queue-access":[1]
 

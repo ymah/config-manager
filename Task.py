@@ -18,9 +18,6 @@ class Task:
         self.function = taskJSON['function']
         self.stackSize = taskJSON['stackSize']
         self.parameters= taskJSON['parameters']
-    
+
     def generate(self,):
-        print("xTaskCreate(&%s,%s,%d,%s,%d,%d);"%(self.function,self.name,self.stackSize,self.parameters,self.priority,0))
-
-
-
+        return "xTaskCreate(&%s,\"%s\",%d,%s,%d,%d);"%(self.function,self.name,self.stackSize,self.parameters,self.priority,0)
