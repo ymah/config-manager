@@ -2,9 +2,13 @@
 
 ##Execution example
 
-run ```bash
+run
+
+```bash
   python parse.py example.json
 ```
+
+
 ## Json domain structure example
 
 
