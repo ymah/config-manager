@@ -1,6 +1,10 @@
 # config-manager
 
+##Execution example
 
+run ```bash
+  python parse.py example.json
+```
 ## Json domain structure example
 
 
@@ -36,7 +40,7 @@
       "stackSize":1000,
       "parameters":"NULL",
       "hw-access":["led1"],
-      "queue-access":[1,2] 
+      "queue-access":[1,2]
     },
     {
       "id":2,
