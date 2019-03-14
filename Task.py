@@ -19,5 +19,8 @@ class Task:
         self.stackSize = taskJSON['stackSize']
         self.parameters= taskJSON['parameters']
 
-    def generate(self,):
-        return "xTaskCreate(&%s,\"%s\",%d,%s,%d,%d);"%(self.function,self.name,self.stackSize,self.parameters,self.priority,0)
+    def generate(self):
+        return ("BaseType_t %s_handler = "
+               "xTaskCreate(&%s,\"%s\",%d,%s,%d,%d);"
+               %(self.name,self.function,self.name,self.stackSize,self.parameters,self.priority,0)
+               )

@@ -16,4 +16,4 @@ class Hardware:
         self.name = hdwreJSON['hardware-name']
 
     def generate(self):
-        return ("giveHardwareAccess(%d,%s)"%(self._id,self.name))
+        return("giveHardwareAccess(%d,%s)"%(self._id,self.name))

@@ -43,14 +43,20 @@ class Domain:
             self.listOfTask.append(subTask.generate())
 
         self.domain.append(self.listOfTask)
+
         for subPart in self.subPartition:
             self.listOfPartition.append(subPart.generate())
+
         self.domain.append(self.listOfPartition)
+
         for qu in self.queue:
             self.listOfQueues.append(qu.generate())
+
         self.domain.append(self.listOfQueues)
+
         for hw in self.hardware:
             self.listOfHardware.append(hw.generate())
+
         self.domain.append(self.listOfHardware)
 
 
@@ -59,3 +65,6 @@ class Domain:
 
     def getName(self):
         return self.name
+
+    def getSubPartitions(self):
+        return self.subPartition

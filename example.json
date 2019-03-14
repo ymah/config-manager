@@ -22,29 +22,56 @@
     "sub-partitions":[
     {
       "id":1,
-      "name":"part1",
+      "name":"partition-owner",
       "priority":12,
       "hw-access":["led1"],
-      "queue-access":[1,2]
+      "queue-access":[1,2],
+      "binary-location":"home/dir/partitionBin1.bin"
     },
     {
       "id":2,
-      "name":"part2",
+      "name":"partition-sensors",
       "priority":13,
       "hw-access":["led2"],
-      "queue-access":[1]
+      "queue-access":[1],
+      "binary-location":"home/dir/partitionBin2.bin"
+
+    },
+    {
+      "id":2,
+      "name":"partition-network",
+      "priority":13,
+      "hw-access":["led2"],
+      "queue-access":[1],
+      "binary-location":"home/dir/partitionBin3.bin"
 
     }
     ],
     "hardware":[
     {
       "id":1,
-      "hardware-name":"led1"
+      "hardware-name":"led1",
+      "allowed-partitions":[1]
     },
     {
       "id":2,
-      "hardware-name":"led2"
+      "hardware-name":"led2",
+      "allowed-partitions":[2]
     }
     ],
-    "queues":[]
+    "queues":[
+      {
+        "id":1,
+        "queue-name":"network-owner",
+        "queue-size":20,
+        "element-size":150
+      },
+      {
+        "id":2,
+        "queue-name":"owner-sensors",
+        "queue-size":10,
+        "element-size":120
+      }
+
+    ]
 }

@@ -13,8 +13,11 @@ class Queue:
 
     def __init__(self,queueJSON):
         self._id = queueJSON['id']
-        self.name = queueJSON['taskName']
+        self.name = queueJSON['queue-name']
         self.queueLength = queueJSON['queue-size']
         self.itemSize = queueJSON['element-size']
+
     def generate(self):
-        return ("xQueueCreate(%d,%d);"%(self.queueLength,self.itemSize))
+        return ("QueueHandle_t %s ="
+                " QueuexQueueCreate(%d,%d);\n"
+                %(self.name,self.queueLength,self.itemSize))
